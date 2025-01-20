@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function fetchTopTenMovies() {
-    fetch('https://api.themoviedb.org/3/discover/movie?api_key=e21905c35ecf398acd316a5070783f51&sort_by=popularity.desc')
+    fetch('https://api.themoviedb.org/3/discover/movie?api_key=0c5d73a9ea0e83d2847b53a292162d05&sort_by=popularity.desc')
         .then(response => response.json())
         .then(data => {
             displayMovies(data.results.slice(0, 12));
@@ -13,6 +13,7 @@ function fetchTopTenMovies() {
 
 function displayMovies(movies) {
     var movieContainer = document.getElementById('movie-container');
+
     movieContainer.innerHTML = '';
 
     movies.forEach(movie => {
